@@ -8,14 +8,16 @@
 
 import UIKit
 import SDWebImage
+import UserNotifications
 
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,UNUserNotificationCenterDelegate {
 var ImageUrl = 0
     @IBOutlet weak var detailImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         UNUserNotificationCenter.current().delegate = self
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
@@ -33,9 +35,22 @@ var ImageUrl = 0
             options: .highPriority,
             progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                 if isFinished{
-                    let alert = UIAlertController(title: "Alert", message: "Download completed", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    let content = UNMutableNotificationContent()
+                    
+                    //adding title, subtitle, body and badge
+                    content.title = "Download completd"
+//                content.badge = 1
+                    
+                    
+                    //getting the notification trigger
+                    //it will be called after 5 seconds
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                    
+                    //getting the notification request
+                    let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
+                    
+                    //adding the notification to notification center
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                 }
         }
     }
@@ -54,5 +69,10 @@ var ImageUrl = 0
 //        let image = UIImage(named: "Product")
         }
         
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //displaying the ios local notification when app is in foreground
+        completionHandler([.alert, .badge, .sound])
     }
 }

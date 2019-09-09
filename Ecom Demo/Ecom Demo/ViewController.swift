@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -16,14 +17,15 @@ class ViewController: UIViewController {
     var selectedIndex = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge]) {
+            (granted, error) in
+            if granted {
+                print("yes")
+            } else {
+                print("No")
+            }
+        }
+
         colletionview.delegate = self
         colletionview.dataSource = self
         
@@ -41,19 +43,6 @@ class ViewController: UIViewController {
     }
 
 
-}
-extension UIImage {
-    convenience init?(url: URL?) {
-        guard let url = url else { return nil }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            self.init(data: data)
-        } catch {
-            print("Cannot load image from url: \(url) with error: \(error)")
-            return nil
-        }
-    }
 }
 extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 {
