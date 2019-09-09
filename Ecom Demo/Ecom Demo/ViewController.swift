@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width
-        print(width)
+      
         layout.sectionInset = UIEdgeInsets(top: 7, left:10, bottom: 7, right: 10)
         layout.itemSize = CGSize(width: width / 2, height: width / 2)
         layout.minimumInteritemSpacing = 10

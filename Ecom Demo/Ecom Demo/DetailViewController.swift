@@ -40,10 +40,19 @@ var ImageUrl = 0
         }
     }
     @IBAction func shareAction(_ sender: Any) {
-        let shareText = "Hello, world!"
-        if let image = UIImage(named: "myImage") {
-            let vc = UIActivityViewController(activityItems: [shareText, image], applicationActivities: [])
-            present(vc, animated: true)
+        DispatchQueue.main.async {
+            let url = URL(string: "https://picsum.photos/id/\(self.ImageUrl + 10)/300/400")
+        let data = try? Data(contentsOf: url!)
+        
+        if let imageData = data {
+            let image = UIImage(data: imageData)
+            let shareAll = [image] 
+            let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
         }
+//        let image = UIImage(named: "Product")
+        }
+        
     }
 }
