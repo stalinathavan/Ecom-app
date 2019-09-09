@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
 
@@ -57,7 +58,7 @@ extension UIImage {
 extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,17 +66,11 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         let cell = colletionview.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.layer.cornerRadius = 5
         DispatchQueue.main.async {
-        let url = URL(string: "https://picsum.photos/id/\(indexPath.item + 10)/165/155")
-        let data = try? Data(contentsOf: url!)
+       cell.imageView.sd_imageIndicator = SDWebImageActivityIndicator.white
+       cell.imageView.sd_setImage(with: URL(string: "https://picsum.photos/id/\(indexPath.item + 10)/165/155"))
             let width = UIScreen.main.bounds.width
             cell.imageView.frame.size = CGSize(width: width/2, height: width/2)
-        
-        if let imageData = data {
-            let image = UIImage(data: imageData)
-            cell.imageView.image = image
-        }
-        
-        }
+      }
         return cell
     }
     

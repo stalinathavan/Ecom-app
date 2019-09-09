@@ -15,9 +15,12 @@
 		6F375B7F2325272C00B0D7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F375B7D2325272C00B0D7CD /* LaunchScreen.storyboard */; };
 		6F375B872325341500B0D7CD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F375B862325341500B0D7CD /* CollectionViewCell.swift */; };
 		6F375B892325733F00B0D7CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F375B882325733F00B0D7CD /* DetailViewController.swift */; };
+		BEAC72FBED7E211BE9C9D1FE /* Pods_Ecom_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A8262ACC9462A952EF7F0C /* Pods_Ecom_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44A8262ACC9462A952EF7F0C /* Pods_Ecom_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ecom_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F838293817F216B273B89F8 /* Pods-Ecom Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecom Demo.debug.xcconfig"; path = "Target Support Files/Pods-Ecom Demo/Pods-Ecom Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		6F375B6E2325272A00B0D7CD /* Ecom Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ecom Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F375B712325272A00B0D7CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F375B732325272A00B0D7CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		6F375B802325272C00B0D7CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F375B862325341500B0D7CD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6F375B882325733F00B0D7CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B84D10D74F7A016370C877F5 /* Pods-Ecom Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecom Demo.release.xcconfig"; path = "Target Support Files/Pods-Ecom Demo/Pods-Ecom Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEAC72FBED7E211BE9C9D1FE /* Pods_Ecom_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F771FFEA7A7EF8F8054B9A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44A8262ACC9462A952EF7F0C /* Pods_Ecom_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6F375B652325272900B0D7CD = {
 			isa = PBXGroup;
 			children = (
 				6F375B702325272A00B0D7CD /* Ecom Demo */,
 				6F375B6F2325272A00B0D7CD /* Products */,
+				D3547442D8C3C5BF157BF0DF /* Pods */,
+				0F771FFEA7A7EF8F8054B9A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +88,16 @@
 			path = "Ecom Demo";
 			sourceTree = "<group>";
 		};
+		D3547442D8C3C5BF157BF0DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F838293817F216B273B89F8 /* Pods-Ecom Demo.debug.xcconfig */,
+				B84D10D74F7A016370C877F5 /* Pods-Ecom Demo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F375B832325272C00B0D7CD /* Build configuration list for PBXNativeTarget "Ecom Demo" */;
 			buildPhases = (
+				BFCB8951BE0A00B6B0E9A7FC /* [CP] Check Pods Manifest.lock */,
 				6F375B6A2325272900B0D7CD /* Sources */,
 				6F375B6B2325272900B0D7CD /* Frameworks */,
 				6F375B6C2325272900B0D7CD /* Resources */,
+				B9FAF4039DD37E90084E2A05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9FAF4039DD37E90084E2A05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ecom Demo/Pods-Ecom Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ecom Demo/Pods-Ecom Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFCB8951BE0A00B6B0E9A7FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ecom Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F375B6A2325272900B0D7CD /* Sources */ = {
@@ -292,6 +366,7 @@
 		};
 		6F375B842325272C00B0D7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F838293817F216B273B89F8 /* Pods-Ecom Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +384,7 @@
 		};
 		6F375B852325272C00B0D7CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B84D10D74F7A016370C877F5 /* Pods-Ecom Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

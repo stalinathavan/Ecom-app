@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class DetailViewController: UIViewController {
 var ImageUrl = 0
@@ -17,13 +19,8 @@ var ImageUrl = 0
     }
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
-            let url = URL(string: "https://picsum.photos/id/\(self.ImageUrl + 10)/300/400")
-            let data = try? Data(contentsOf: url!)
-            if let imageData = data {
-                let image = UIImage(data: imageData)
-                self.detailImage.image = image
-//                cell.imageView.image = image
-            }
+            self.detailImage.sd_imageIndicator = SDWebImageActivityIndicator.white
+            self.detailImage.sd_setImage(with: URL(string: "https://picsum.photos/id/\(self.ImageUrl + 10)/300/400"))
         }
             
     }
