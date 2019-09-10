@@ -38,7 +38,7 @@ var ImageUrl = 0
                     let content = UNMutableNotificationContent()
                     
                     //adding title, subtitle, body and badge
-                    content.title = "Download completd"
+                    content.title = "Download completed"
 //                content.badge = 1
                     
                     
