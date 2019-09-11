@@ -57,7 +57,7 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         let cell = colletionview.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.layer.cornerRadius = 5
         DispatchQueue.main.async {
-       cell.imageView.sd_imageIndicator = SDWebImageActivityIndicator.white
+       cell.imageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
        cell.imageView.sd_setImage(with: URL(string: "https://picsum.photos/id/\(indexPath.item + 10)/165/155"))
             let width = UIScreen.main.bounds.width
             cell.imageView.frame.size = CGSize(width: width/2, height: width/2)

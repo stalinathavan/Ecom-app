@@ -124,6 +124,7 @@
                             <constraint firstItem="G9b-j5-J05" firstAttribute="bottom" secondItem="tNI-GF-ACv" secondAttribute="bottom" constant="20" id="LpC-9k-McX"/>
                             <constraint firstItem="G9b-j5-J05" firstAttribute="bottom" secondItem="DFX-J7-4Y5" secondAttribute="bottom" constant="10" id="MOV-84-GrE"/>
                             <constraint firstItem="iER-GB-TnT" firstAttribute="leading" secondItem="G9b-j5-J05" secondAttribute="leading" id="OPP-4g-FI2"/>
+                            <constraint firstItem="w6B-Fp-I9f" firstAttribute="leading" secondItem="tNI-GF-ACv" secondAttribute="trailing" constant="92" id="SNJ-XP-rF5"/>
                             <constraint firstItem="G9b-j5-J05" firstAttribute="trailing" secondItem="w6B-Fp-I9f" secondAttribute="trailing" constant="10" id="VBw-a8-mQd"/>
                             <constraint firstItem="iER-GB-TnT" firstAttribute="top" secondItem="G9b-j5-J05" secondAttribute="top" id="jYX-cC-5yq"/>
                         </constraints>
