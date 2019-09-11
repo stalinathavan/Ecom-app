@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var selectedIndex = -1
     override func viewDidLoad() {
-        super.viewDidLoad()
+//        super.viewDidLoad()
+        // create the alert
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge]) {
             (granted, error) in
             if granted {
