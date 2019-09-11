@@ -30,29 +30,24 @@ var ImageUrl = 0
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func downloadAction(_ sender: Any) {
-        SDWebImageManager.shared.loadImage(
-            with: URL(string: "https://picsum.photos/id/\(self.ImageUrl + 10)/300/400"),
-            options: .highPriority,
-            progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-                if isFinished{
-                    let content = UNMutableNotificationContent()
-                    
-                    //adding title, subtitle, body and badge
-                    content.title = "Download completed"
-//                content.badge = 1
-                    
-                    
-                    //getting the notification trigger
-                    //it will be called after 5 seconds
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-                    
-                    //getting the notification request
-                    let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
-                    
-                    //adding the notification to notification center
-                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                }
+//        SDWebImageManager.shared.loadImage(
+//            with: URL(string: "https://picsum.photos/id/\(self.ImageUrl + 10)/300/400"),
+//            options: .highPriority,
+//            progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+//                if isFinished{
+        if let url = URL(string: "https://picsum.photos/id/\(self.ImageUrl + 10)/300/400"),
+            let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            let content = UNMutableNotificationContent()
+           content.title = "Download completed"
+           let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
+        
+//                }
+//        }
     }
     @IBAction func shareAction(_ sender: Any) {
         DispatchQueue.main.async {
