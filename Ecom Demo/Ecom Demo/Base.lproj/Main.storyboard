@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZwM-ks-sqd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,12 +60,13 @@
                     </view>
                     <connections>
                         <outlet property="colletionview" destination="U8u-34-clT" id="nKn-dK-Zf7"/>
-                        <segue destination="nPq-88-e02" kind="show" identifier="detail" id="lpO-zv-Voh"/>
+                        <segue destination="nPq-88-e02" kind="show" identifier="" id="lpO-zv-Voh"/>
+                        <segue destination="ZwM-ks-sqd" kind="show" identifier="detail" id="Qyc-QZ-bLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="69"/>
+            <point key="canvasLocation" x="809" y="63"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="nGV-8F-54j">
@@ -136,12 +137,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSO-cP-T6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069.5999999999999" y="85.907046476761622"/>
+            <point key="canvasLocation" x="1508" y="-18"/>
         </scene>
         <!--Colletion View Controller-->
         <scene sceneID="AJk-dh-I69">
             <objects>
-                <viewController id="ZwM-ks-sqd" customClass="ColletionViewController" customModule="Ecom_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZwM-ks-sqd" customClass="ColletionViewController" customModule="Ecom_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AGR-cL-XIj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +163,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jZ2-Zq-Bto"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="chnaged:" destination="ZwM-ks-sqd" eventType="valueChanged" id="dZt-qe-2Cm"/>
+                                </connections>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiH-Rl-BJm">
                                 <rect key="frame" x="10" y="617" width="50" height="50"/>
@@ -217,12 +221,14 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="NcJ-St-ga8" id="3CY-ns-Ll3"/>
+                        <outlet property="downloadBtn" destination="pie-MW-5nS" id="ae9-CC-S30"/>
                         <outlet property="pageControl" destination="lHV-9v-V0V" id="dXf-XU-D8t"/>
+                        <outlet property="shareBtn" destination="xiH-Rl-BJm" id="WPV-ph-eRh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kb0-X4-Z4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="148"/>
+            <point key="canvasLocation" x="1897" y="475"/>
         </scene>
     </scenes>
     <resources>

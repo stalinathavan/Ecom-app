@@ -74,7 +74,7 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UI
         self.performSegue(withIdentifier: "detail", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nextViewController = segue.destination as? DetailViewController {
+        if let nextViewController = segue.destination as? ColletionViewController {
             nextViewController.ImageUrl = self.selectedIndex
             
         }
